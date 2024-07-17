@@ -4,7 +4,6 @@ import appwriteService from "../appwrite/config"
 import {Button, Container} from "../components"
 import parse from "html-react-parser"
 import { useSelector } from 'react-redux'
-import { set } from 'react-hook-form'
 
 export default function Post () {
     const [post, setPost] = useState(null);

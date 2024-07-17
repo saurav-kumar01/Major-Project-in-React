@@ -18,7 +18,7 @@ const LogoutBtn = () => {
         onClick={logoutHandler}
       >
         Logout
-      </button>
+      </button>``
     </>
   );
 };
