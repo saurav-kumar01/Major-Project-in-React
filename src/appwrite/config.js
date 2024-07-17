@@ -74,7 +74,7 @@ export class Service {
       console.log("Appwrite service :: getPost :: error", error);
       return false;
     }
-  }
+  } 
 
   async getPosts(queries = [Query.equal("status", "active")]) {
     try {

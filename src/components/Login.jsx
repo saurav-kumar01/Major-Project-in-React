@@ -4,7 +4,7 @@ import { login as authLogin } from "../store/authSlice";
 import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
-import { useForm } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Login = () => {
       if (session) {
         const userData = await authService.getCurrentUser();
         if (userData) dispatch(authLogin(userData));
-        navigate("/")
+        navigate("/");
       }
     } catch (error) {
       setError(error.message);
@@ -57,8 +57,8 @@ const Login = () => {
               {...register("email", {
                 required: true,
                 validate: {
-                  matchpatern: (value) =>
-                    /^w+([.-]?\w+)+@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+                  matchPatern: (value) =>
+                    /^w+([.-]?\w+)+@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                     "Email address must be a valid",
                 },
               })}
